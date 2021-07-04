@@ -3,8 +3,6 @@ object WallService {
     private var posts = emptyArray<Post>()
     private var attachments = emptyArray<Attachment>()
 
-
-
     fun add(post: Post): Post {
         var uniqueId = post.id
         for (pst in posts) {

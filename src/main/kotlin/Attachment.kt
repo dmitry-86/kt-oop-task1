@@ -1,6 +1,5 @@
 interface Attachment{
     val type: String
-    //второе поле зависит от типа
 }
 
 class AudioAttachment(
@@ -59,7 +58,7 @@ class Album(
 )
 
 class DocAttachment(
-    override val type: String,
+    override val type: String = "doc",
     val doc: Doc
 ): Attachment
 
