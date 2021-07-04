@@ -17,7 +17,15 @@ class WallServiceTest {
             6,
             7,
             1,
+            null,
+            null,
+            null,
+            null,
+            null,
             "Text",
+            null,
+            null,
+            null,
             7,
             false,
             false,
@@ -25,6 +33,7 @@ class WallServiceTest {
             false,
             false,
             false,
+            null,
             7)
 
         service.add(post)
@@ -51,7 +60,15 @@ class WallServiceTest {
             6,
             7,
             1,
+            null,
+            null,
+            null,
+            null,
+            null,
             "Text",
+            null,
+            null,
+            null,
             7,
             false,
             false,
@@ -59,6 +76,7 @@ class WallServiceTest {
             false,
             false,
             false,
+            null,
             7)
 
         service.add(post)
@@ -74,7 +92,15 @@ class WallServiceTest {
             6,
             7,
             1,
+            null,
+            null,
+            null,
+            null,
+            null,
             "Text",
+            null,
+            null,
+            null,
             7,
             false,
             false,
@@ -82,6 +108,7 @@ class WallServiceTest {
             false,
             false,
             false,
+            null,
             7)
 
         val result = service.update(update)
@@ -93,7 +120,7 @@ class WallServiceTest {
     fun updateNotExisting() {
 
         val service = WallService
-        val post = Post(3,
+        val post = Post(2,
             1,
             2,
             3,
@@ -102,7 +129,15 @@ class WallServiceTest {
             6,
             7,
             1,
+            null,
+            null,
+            null,
+            null,
+            null,
             "Text",
+            null,
+            null,
+            null,
             7,
             false,
             false,
@@ -110,6 +145,7 @@ class WallServiceTest {
             false,
             false,
             false,
+            null,
             7)
 
         service.add(post)
@@ -119,7 +155,7 @@ class WallServiceTest {
         service.add(post)
 
         val update = Post(23,
-            3,
+            1,
             2,
             3,
             4,
@@ -127,7 +163,15 @@ class WallServiceTest {
             6,
             7,
             1,
+            null,
+            null,
+            null,
+            null,
+            null,
             "Text",
+            null,
+            null,
+            null,
             7,
             false,
             false,
@@ -135,6 +179,7 @@ class WallServiceTest {
             false,
             false,
             false,
+            null,
             7)
 
         val result = service.update(update)

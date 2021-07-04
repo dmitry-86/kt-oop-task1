@@ -1,6 +1,9 @@
 object WallService {
 
     private var posts = emptyArray<Post>()
+    private var attachments = emptyArray<Attachment>()
+
+
 
     fun add(post: Post): Post {
         var uniqueId = post.id
@@ -11,6 +14,11 @@ object WallService {
         }
         posts += post.copy(id = uniqueId)
         return posts.last()
+    }
+
+    fun add(attachment: Attachment): Attachment{
+        attachments+=attachment
+        return attachments.last()
     }
 
     fun update(post: Post): Boolean {
@@ -40,6 +48,47 @@ object WallService {
         }
         return isPostExists
     }
+
+    fun audioAttachment(attachment: Attachment){
+        if(attachment !is AudioAttachment) {
+            //TODO
+        }else{
+            val audio = attachment.audio
+        }
+    }
+
+    fun videoAttachment(attachment: Attachment){
+        if(attachment !is VideoAttachment) {
+            //TODO
+        }else{
+            val video = attachment.video
+        }
+    }
+
+    fun photoAttachment(attachment: Attachment){
+        if(attachment !is PhotoAttachment) {
+            //TODO
+        }else{
+            val photo = attachment.photo
+        }
+    }
+
+    fun albumAttachment(attachment: Attachment){
+        if(attachment !is AlbumAttachment) {
+            //TODO
+        }else{
+            val album = attachment.album
+        }
+    }
+
+    fun docAttachment(attachment: Attachment){
+        if(attachment !is DocAttachment) {
+            //TODO
+        }else{
+            val doc = attachment.doc
+        }
+    }
+
 
 //    fun print() {
 //        for (post in posts) {
