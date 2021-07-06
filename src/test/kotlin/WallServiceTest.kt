@@ -75,7 +75,6 @@ class WallServiceTest {
         assertTrue(result)
     }
 
-
     @Test
     fun add() {
         val service = WallService

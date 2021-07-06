@@ -61,7 +61,6 @@ class PostSource(
 class Geo(
     val type: String,
     val coordinates: String
-    //place
 )
 
 class Donut(

@@ -92,7 +92,7 @@ object WallService {
         }
     }
 
-    
+
     //медиа
     private var attachments = emptyArray<Attachment>()
 
@@ -142,7 +142,6 @@ object WallService {
             val doc = attachment.doc
         }
     }
-
 
 //    fun print() {
 //        for (post in posts) {
