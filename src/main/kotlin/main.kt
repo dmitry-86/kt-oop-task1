@@ -76,9 +76,15 @@ class Geo(
 class Donut(
     val is_donut: Boolean,
     val paid_duration: Boolean,
-    //placeholder
+    val placeholder: String,
     val can_publish_free_copy: Boolean,
     val edit_mode: String
+)
+
+class Report(
+    val owner_id: Int,
+    val comment_id: Int,
+    val reason: Int
 )
 
 fun main() {

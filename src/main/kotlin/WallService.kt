@@ -1,7 +1,13 @@
+import java.lang.RuntimeException
+
+class PostNotFoundException(message: String): RuntimeException(message)
+class ReasonNotFoundException(message: String): RuntimeException(message)
+
 object WallService {
 
+    //посты
+
     private var posts = emptyArray<Post>()
-    private var attachments = emptyArray<Attachment>()
 
     fun add(post: Post): Post {
         var uniqueId = post.id
@@ -13,6 +19,9 @@ object WallService {
         posts += post.copy(id = uniqueId)
         return posts.last()
     }
+
+    //медиа
+    private var attachments = emptyArray<Attachment>()
 
     fun add(attachment: Attachment): Attachment{
         attachments+=attachment
@@ -46,6 +55,50 @@ object WallService {
         }
         return isPostExists
     }
+
+    //домашняя работа - иключения
+    //комментарии
+
+    private var comments = emptyArray<Comment>() //домашняя работа
+
+    fun createComment(comment: Comment) {
+        var isPostExists = false
+        for (post in posts) {
+            if (post.id == comment.post_id ) {
+                comments += comment
+               isPostExists = true
+            }
+        }
+        if(!isPostExists){
+            throw PostNotFoundException("post with id: ${comment.post_id} was not found")
+        }
+    }
+
+    //жалобы
+
+    private var reports = emptyArray<Report>()
+
+    fun reportComment(report: Report, comment: Comment): Boolean{
+        //проверяем id комментария
+        var isPostExists = false
+        for (post in posts) {
+            if (post.id == comment.post_id ) {
+                isPostExists = true
+            }
+        }
+        if(!isPostExists){
+            throw PostNotFoundException("post with id: ${comment.post_id} was not found")
+        }
+        //проверяем причину
+        if(report.reason in 1..8) {
+            reports +=report
+            return true
+        }else{
+            throw ReasonNotFoundException("Reason was not found")
+        }
+    }
+
+    //smart casts
 
     fun audioAttachment(attachment: Attachment){
         if(attachment !is AudioAttachment) {

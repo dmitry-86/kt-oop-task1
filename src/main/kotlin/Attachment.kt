@@ -3,7 +3,7 @@ interface Attachment{
 }
 
 class AudioAttachment(
-    override val type: String = "audio",
+    override val type: String,
     val audio: Audio
 ): Attachment
 
