@@ -28,15 +28,6 @@ data class Post(
     val postponed_id: Int
 )
 
-class Comments(
-    val count: Int,
-    val can_post: Boolean,
-    val groups_can_post: Boolean,
-    val can_close: Boolean,
-    val can_open: Boolean
-)
-
-
 class Copyright(
     val id: Int,
     val link: String,
@@ -79,12 +70,6 @@ class Donut(
     val placeholder: String,
     val can_publish_free_copy: Boolean,
     val edit_mode: String
-)
-
-class Report(
-    val owner_id: Int,
-    val comment_id: Int,
-    val reason: Int
 )
 
 fun main() {

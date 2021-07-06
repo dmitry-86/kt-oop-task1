@@ -41,7 +41,6 @@ class WallServiceTest {
         val postId = 2
         val comment = Comment(1, postId, 2, "comment", 5, null, 2, " ")
         service.createComment(comment)
-
     }
 
     @Test(expected = PostNotFoundException::class)
@@ -60,7 +59,6 @@ class WallServiceTest {
     @Test
     fun reportComment() {
         val service = WallService
-
         val comment = Comment(10, 2, 2, "comment", 5, null,2, " ")
         val report = Report(1,3,7)
         val result = service.reportComment(report, comment)

@@ -20,14 +20,6 @@ object WallService {
         return posts.last()
     }
 
-    //медиа
-    private var attachments = emptyArray<Attachment>()
-
-    fun add(attachment: Attachment): Attachment{
-        attachments+=attachment
-        return attachments.last()
-    }
-
     fun update(post: Post): Boolean {
         var isPostExists = false
         for ((index, existingPost) in posts.withIndex()) {
@@ -56,6 +48,7 @@ object WallService {
         return isPostExists
     }
 
+
     //домашняя работа - иключения
     //комментарии
 
@@ -73,6 +66,7 @@ object WallService {
             throw PostNotFoundException("post with id: ${comment.post_id} was not found")
         }
     }
+
 
     //жалобы
 
@@ -96,6 +90,15 @@ object WallService {
         }else{
             throw ReasonNotFoundException("Reason was not found")
         }
+    }
+
+    
+    //медиа
+    private var attachments = emptyArray<Attachment>()
+
+    fun add(attachment: Attachment): Attachment{
+        attachments+=attachment
+        return attachments.last()
     }
 
     //smart casts
