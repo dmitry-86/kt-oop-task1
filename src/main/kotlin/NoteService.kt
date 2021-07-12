@@ -2,7 +2,7 @@ import java.lang.RuntimeException
 
 class NoteNotFoundException(message: String) : RuntimeException(message)
 
-object NoteService : CRUDSevice<Note> {
+object NoteService : CRUDSevice<Note>, CommentCRUDService<Note, Comment> {
 
     private var notes = mutableListOf<Note>()
 
