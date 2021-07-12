@@ -39,7 +39,7 @@ class WallServiceTest {
         service.add(post)
         service.add(post)
         val postId = 2
-        val comment = Comment(1, postId, 2, "comment", 5, null, 2, " ")
+        val comment = Comment(1, 1, postId, 2, 3, "comment", 5, null, 2, " ")
         service.createComment(comment)
     }
 
@@ -52,14 +52,14 @@ class WallServiceTest {
         service.add(post)
         service.add(post)
         val postId = 20
-        val comment = Comment(10, postId, 2, "comment", 5, null,2, " ")
+        val comment = Comment(2, 10, postId, 2, 2, "comment", 5, null,2, " ")
         service.createComment(comment)
     }
 
     @Test
     fun reportComment() {
         val service = WallService
-        val comment = Comment(10, 2, 2, "comment", 5, null,2, " ")
+        val comment = Comment(3, 10, 2, 2, 2, "comment", 5, null,2, " ")
         val report = Report(1,3,7)
         val result = service.reportComment(report, comment)
         assertTrue(result)
@@ -69,7 +69,7 @@ class WallServiceTest {
     fun reportCommentShouldThrow() {
         val service = WallService
         val reason = 9
-        val comment = Comment(10, 2, 2, "comment", 5, null,2, " ")
+        val comment = Comment(4, 10, 2, 2, 2, "comment", 5, null,2, " ")
         val report = Report(1,3,reason)
         val result = service.reportComment(report, comment)
         assertTrue(result)
