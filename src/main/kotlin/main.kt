@@ -73,4 +73,25 @@ class Donut(
 
 fun main() {
 
+    val chat1 = Chat(1, 2)
+    val chat2 = Chat(2, 2)
+    val msg = Message(1, 1, 1, "Privet", false)
+    val msg2 = Message(2, 1, 1, "Как дела?", false)
+    val msg3 = Message(2, 1, 1, "Как дела?", false)
+
+    val service = ChatService
+    service.addMessage(1,  chat1, msg)
+    service.addMessage(1, chat1, msg2)
+    service.addMessage(1, chat1, msg3)
+    service.addMessage(2, chat2, msg3)
+
+    service.print()
+    //service.delete(1, msg)
+    //service.print()
+    service.edit(1, 1,  msg2, "Что делаешь?")
+    service.print()
+    //service.removeChat(1)
+    println(service.getUnreadChatsCount(1, 1))
+    println(service.getChats(1))
+    println(service.getListOfMessages(1, 1, 1, 2))
 }
